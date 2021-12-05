@@ -19,11 +19,11 @@ export const MoneyMarketCurve = React.memo(
             disableZoom: true,
             xAxis: {
               label: "Quantity of Money",
-              domain: [0, 6],
+              domain: [0, 10],
             },
             yAxis: {
               label: "Nominal Interest Rate %",
-              domain: [0, 6],
+              domain: [0, 10],
             },
             data: [
               {
@@ -31,13 +31,13 @@ export const MoneyMarketCurve = React.memo(
               },
               {
                 points: [
-                  [3, 0],
-                  [3, 1],
-                  [3, 2],
-                  [3, 3],
-                  [3, 4],
-                  [3, 5],
-                  [3, 6],
+                  [5 + chartsData["ms"], 0],
+                  [5 + chartsData["ms"], 1],
+                  [5 + chartsData["ms"], 2],
+                  [5 + chartsData["ms"], 3],
+                  [5 + chartsData["ms"], 4],
+                  [5 + chartsData["ms"], 5],
+                  [5 + chartsData["ms"], 6],
                 ],
                 fnType: "points",
                 graphType: "polyline",

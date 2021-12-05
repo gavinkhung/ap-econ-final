@@ -10,7 +10,8 @@ const Provider = (props) => {
     lrpc: 0,
     production: 100,
     ad: 0,
-    as: 0,
+    sras: 0,
+    lras: 0,
   });
 
   return (

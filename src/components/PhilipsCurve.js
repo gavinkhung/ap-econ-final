@@ -19,11 +19,11 @@ export const PhilipsCurve = React.memo(
             disableZoom: true,
             xAxis: {
               label: "Unemployment Rate %",
-              domain: [0, 6],
+              domain: [0, 10],
             },
             yAxis: {
               label: "Inflation Rate %",
-              domain: [0, 6],
+              domain: [0, 10],
             },
             data: [
               {
@@ -31,13 +31,13 @@ export const PhilipsCurve = React.memo(
               },
               {
                 points: [
-                  [3, 0],
-                  [3, 1],
-                  [3, 2],
-                  [3, 3],
-                  [3, 4],
-                  [3, 5],
-                  [3, 6],
+                  [5 + chartsData["lrpc"], 0],
+                  [5 + chartsData["lrpc"], 1],
+                  [5 + chartsData["lrpc"], 2],
+                  [5 + chartsData["lrpc"], 3],
+                  [5 + chartsData["lrpc"], 4],
+                  [5 + chartsData["lrpc"], 5],
+                  [5 + chartsData["lrpc"], 6],
                 ],
                 fnType: "points",
                 graphType: "polyline",

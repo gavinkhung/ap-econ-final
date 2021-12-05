@@ -13,7 +13,7 @@ const scenarios = {
       lrpc: 0,
       production: 4,
       ad: 0,
-      as: 0,
+      sras: 0,
     },
     {
       description: "lost",
@@ -24,7 +24,7 @@ const scenarios = {
       lrpc: 0,
       production: -5,
       ad: 0,
-      as: 0,
+      sras: 0,
     },
   ],
   keynesian: [
@@ -37,7 +37,7 @@ const scenarios = {
       lrpc: 0,
       production: -5,
       ad: 0,
-      as: 0,
+      sras: 0,
     },
   ],
   monetary: [
@@ -50,7 +50,7 @@ const scenarios = {
       lrpc: 0,
       production: -5,
       ad: 0,
-      as: 0,
+      sras: 0,
     },
   ],
 };
@@ -58,22 +58,35 @@ const scenarios = {
 const Cards = ({ policy }) => {
   const { chartsData, setChartsData } = useContext(Context);
   const [scenario, setScenario] = useState({});
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [effected, setEffected] = useState(false);
 
   useEffect(() => {
-    console.log("a", policy);
     if (policy && scenarios[policy] !== undefined) {
       showNextCard();
     }
     resetToEquilibrium();
+
+    return () => {
+      resetToEquilibrium();
+      setCurrentIndex(0);
+      setEffected(false);
+      setScenario({});
+    };
   }, []);
 
   const showNextCard = () => {
-    if (policy && scenarios[policy] !== undefined) {
-      const index = Math.floor(Math.random() * scenarios[policy].length);
+    if (
+      policy &&
+      scenarios[policy] !== undefined &&
+      currentIndex < scenarios[policy].length
+    ) {
+      // const index = Math.floor(Math.random() * scenarios[policy].length);
+      const index = (currentIndex + 1) % scenarios[policy].length;
       const scene = scenarios[policy][index];
-      console.log(scene);
+
       setScenario({ ...scene });
+      setCurrentIndex(index);
       setEffected(false);
     }
   };
@@ -87,7 +100,7 @@ const Cards = ({ policy }) => {
       lrpc: 0,
       production: 100,
       ad: 0,
-      as: 0,
+      sras: 0,
     });
   };
 
@@ -102,7 +115,7 @@ const Cards = ({ policy }) => {
           lrpc: chartsData["lrpc"] + scenario["lrpc"],
           production: chartsData["production"] + scenario["production"],
           ad: chartsData["ad"] + scenario["ad"],
-          as: chartsData["as"] + scenario["as"],
+          sras: chartsData["sras"] + scenario["sras"],
         });
         setEffected(true);
       }
