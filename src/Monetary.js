@@ -1,50 +1,23 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 
-import Context from "./Context";
+import { SupplyAndDemandCurve } from "./components/SupplyAndDemandCurve";
+import { MoneyMarketCurve } from "./components/MoneyMarketCurve";
+import Cards from "./components/Cards";
 
-import { Chart } from "./components/Chart";
-import ProductionPossibilityCurve from "./components/ProductionPossibilityCurve";
-
-const Home = () => {
-  console.log("a");
-  const { chartsData, setChartsData } = useContext(Context);
+const Monetary = ({ policy }) => {
   return (
-    <div className="bg-gray-100 p-4 w-full h-full space-y-4">
-      <div className="space-y-2 mb-4">
-        <h1 className="text-5xl font-extrabold ">
-          Creative Economic Assignment
-        </h1>
-        <p className="text-3xl">Gavin Hung Period: 1</p>
-      </div>
-      <div className="flex justify-between">
+    <>
+      <div className="flex justify-around">
         <div className="">
-          <h2 className="text-xl text-center">Production Possibility Curve</h2>
-          <Chart />
+          <SupplyAndDemandCurve />
         </div>
         <div className="">
-          <h2 className="text-xl text-center">Production Possibility Curve</h2>
-          <ProductionPossibilityCurve />
-        </div>
-        <div className="">
-          <h2 className="text-xl text-center">Production Possibility Curve</h2>
-          <Chart />
+          <MoneyMarketCurve />
         </div>
       </div>
-      <button
-        onClick={() => {
-          setChartsData({
-            ...setChartsData,
-            production:
-              chartsData["production"] < 5
-                ? chartsData["production"] + Math.floor(Math.random() * 4)
-                : chartsData["production"],
-          });
-        }}
-      >
-        click
-      </button>
-    </div>
+      <Cards policy={policy} />
+    </>
   );
 };
 
-export default Home;
+export default Monetary;

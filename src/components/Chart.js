@@ -8,8 +8,6 @@ export const Chart = React.memo(
     const rootEl = useRef(null);
     const { chartsData } = useContext(Context);
 
-    console.log(chartsData["production"]);
-
     useEffect(() => {
       try {
         functionPlot(
@@ -35,7 +33,7 @@ export const Chart = React.memo(
           })
         );
       } catch (e) {}
-    });
+    }, [chartsData]);
 
     return <div ref={rootEl} />;
   },

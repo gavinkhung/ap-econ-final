@@ -3,7 +3,7 @@ import functionPlot from "function-plot";
 
 import Context from "../Context";
 
-export const MoneyMarketCurve = React.memo(
+export const PhilipsCurve = React.memo(
   ({ options }) => {
     const rootEl = useRef(null);
     const { chartsData } = useContext(Context);
@@ -12,22 +12,22 @@ export const MoneyMarketCurve = React.memo(
       try {
         functionPlot(
           Object.assign({}, options, {
-            title: "Money Market Graph",
+            title: "Philips Curve",
             target: rootEl.current,
             width: 400,
             height: 300,
             disableZoom: true,
             xAxis: {
-              label: "Quantity of Money",
+              label: "Unemployment Rate %",
               domain: [0, 6],
             },
             yAxis: {
-              label: "Nominal Interest Rate %",
+              label: "Inflation Rate %",
               domain: [0, 6],
             },
             data: [
               {
-                fn: `-x+${6 + chartsData["md"]}`,
+                fn: `1/x+${chartsData["srpc"]}`,
               },
               {
                 points: [

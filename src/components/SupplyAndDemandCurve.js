@@ -3,7 +3,7 @@ import functionPlot from "function-plot";
 
 import Context from "../Context";
 
-export const MoneyMarketCurve = React.memo(
+export const SupplyAndDemandCurve = React.memo(
   ({ options }) => {
     const rootEl = useRef(null);
     const { chartsData } = useContext(Context);
@@ -12,22 +12,25 @@ export const MoneyMarketCurve = React.memo(
       try {
         functionPlot(
           Object.assign({}, options, {
-            title: "Money Market Graph",
+            title: "Aggregate Supply and Demand",
             target: rootEl.current,
             width: 400,
             height: 300,
             disableZoom: true,
             xAxis: {
-              label: "Quantity of Money",
+              label: "Real GDP",
               domain: [0, 6],
             },
             yAxis: {
-              label: "Nominal Interest Rate %",
+              label: "Price Level",
               domain: [0, 6],
             },
             data: [
               {
-                fn: `-x+${6 + chartsData["md"]}`,
+                fn: `-x+${6 + chartsData["ad"]}`,
+              },
+              {
+                fn: `x+${chartsData["as"]}`,
               },
               {
                 points: [

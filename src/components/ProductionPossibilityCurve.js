@@ -1,96 +1,41 @@
-import React, { useContext, useEffect, useState } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+import React, { useContext, useEffect, useRef } from "react";
+import functionPlot from "function-plot";
 
 import Context from "../Context";
 
-const original = [
-  {
-    cars: 0,
-    uv: 1,
+export const ProductionPossibilityCurve = React.memo(
+  ({ options }) => {
+    const rootEl = useRef(null);
+    const { chartsData } = useContext(Context);
+
+    useEffect(() => {
+      try {
+        functionPlot(
+          Object.assign({}, options, {
+            title: "Production Possibility Curve",
+            target: rootEl.current,
+            width: 400,
+            height: 300,
+            disableZoom: true,
+            xAxis: {
+              label: "x - axis",
+              domain: [0, 120],
+            },
+            yAxis: {
+              label: "y - axis",
+              domain: [0, 120],
+            },
+            data: [
+              {
+                fn: `sqrt(${chartsData["production"]}^2 - x * x)`,
+              },
+            ],
+          })
+        );
+      } catch (e) {}
+    }, [chartsData]);
+
+    return <div ref={rootEl} />;
   },
-  {
-    cars: 0.259,
-    uv: 0.966,
-  },
-  {
-    cars: 0.5,
-    uv: 0.866,
-  },
-  {
-    cars: 0.707,
-    uv: 0.707,
-  },
-  {
-    cars: 0.866,
-    uv: 0.5,
-  },
-
-  {
-    cars: 1,
-    uv: 0,
-  },
-];
-
-const Chart = () => {
-  const { chartsData } = useContext(Context);
-  const [data, setData] = useState([
-    {
-      cars: 0,
-      uv: 1,
-    },
-    {
-      cars: 0.259,
-      uv: 0.966,
-    },
-    {
-      cars: 0.5,
-      uv: 0.866,
-    },
-    {
-      cars: 0.707,
-      uv: 0.707,
-    },
-    {
-      cars: 0.866,
-      uv: 0.5,
-    },
-    {
-      cars: 1,
-      uv: 0,
-    },
-  ]);
-
-  useEffect(() => {
-    let stored = JSON.parse(JSON.stringify(original)); //[...original];
-    for (let i = 0; i < stored.length; i++) {
-      stored[i]["cars"] = original[i]["cars"]; // + chartsData["production"];
-      stored[i]["uv"] = original[i]["uv"] * chartsData["production"];
-    }
-    setData([...stored]);
-  }, [chartsData]);
-
-  return (
-    <>
-      {/* <p>{JSON.stringify(data)}</p> */}
-      <LineChart width={400} height={300} data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis scale="linear" domain={[0, 1]} />
-        <YAxis scale="linear" type="number" domain={[0, 1]} />
-
-        <Legend />
-
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-      </LineChart>
-    </>
-  );
-};
-
-export default Chart;
+  () => false
+);

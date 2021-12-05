@@ -4,7 +4,13 @@ import Context from "./Context";
 
 const Provider = (props) => {
   const [chartsData, setChartsData] = useState({
-    production: 1,
+    md: 0,
+    ms: 0,
+    srpc: 0,
+    lrpc: 0,
+    production: 100,
+    ad: 0,
+    as: 0,
   });
 
   return (
