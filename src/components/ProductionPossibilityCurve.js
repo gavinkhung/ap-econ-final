@@ -9,7 +9,7 @@ import {
   Legend,
 } from "recharts";
 
-import Context from "./Context";
+import Context from "../Context";
 
 const original = [
   {
@@ -82,7 +82,7 @@ const Chart = () => {
       {/* <p>{JSON.stringify(data)}</p> */}
       <LineChart width={400} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis scale="linear" />
+        <XAxis scale="linear" domain={[0, 1]} />
         <YAxis scale="linear" type="number" domain={[0, 1]} />
 
         <Legend />
