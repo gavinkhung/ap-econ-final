@@ -27,7 +27,7 @@ export const PhilipsCurve = React.memo(
             },
             data: [
               {
-                fn: `1/x+${chartsData["srpc"]}`,
+                fn: `1/(x-${chartsData["srpc"]})`,
               },
               {
                 points: [
@@ -38,6 +38,10 @@ export const PhilipsCurve = React.memo(
                   [5 + chartsData["lrpc"], 4],
                   [5 + chartsData["lrpc"], 5],
                   [5 + chartsData["lrpc"], 6],
+                  [5 + chartsData["lrpc"], 7],
+                  [5 + chartsData["lrpc"], 8],
+                  [5 + chartsData["lrpc"], 9],
+                  [5 + chartsData["lrpc"], 10],
                 ],
                 fnType: "points",
                 graphType: "polyline",

@@ -5,52 +5,320 @@ import Context from "../Context";
 const scenarios = {
   classical: [
     {
-      description: "Gain",
-      effect: "a",
+      description: "All scenarios have been shown. Press next to play again.",
+      effect: "",
       md: 0,
       ms: 0,
       srpc: 0,
       lrpc: 0,
-      production: 4,
+      production: 100,
       ad: 0,
       sras: 0,
+      lras: 0,
     },
     {
-      description: "lost",
-      effect: "a",
+      description:
+        "A new law states that every employee must be given a pack of Pepsi at every shift.",
+      effect:
+        "Aggregate supply shifts to the left and the Phillips Curve shifts to the right.",
+      md: 0,
+      ms: 0,
+      srpc: 2,
+      lrpc: 0,
+      production: 100,
+      ad: 0,
+      sras: 2,
+      lras: 0,
+    },
+    {
+      description: "Personal income taxes are decreased by 5%.",
+      effect:
+        "Aggregate demand shifts to the right and there is a shift along the Phillips Curve ",
       md: 0,
       ms: 0,
       srpc: 0,
       lrpc: 0,
-      production: -5,
+      production: 100,
+      ad: 2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description:
+        "A new machine comes out that can pack Pepsi at twice the rate of current machines.",
+      effect:
+        "Aggregate supply shifts to the right and the Phillips Curve shifts to the left. This is economic growth.",
+      md: 0,
+      ms: 0,
+      srpc: -2,
+      lrpc: 0,
+      production: 100,
+      ad: 0,
+      sras: -2,
+      lras: 0,
+    },
+    {
+      description:
+        "A report comes out that says excess sugar leads to diabetes.",
+      effect:
+        "Aggregate demand shifts to the left and there is a shift along the Phillips Curve. This is a recession.",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: -2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description: "What happens to aggregate supply in the long run?",
+      effect:
+        "After some time (18-24 months), the market should adjust itself back to equilibrium.",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
       ad: 0,
       sras: 0,
+      lras: 0,
     },
   ],
   keynesian: [
     {
-      description: "lost",
-      effect: "a",
+      description: "",
+      effect: "",
+      md: 0,
+      ms: 0,
+      srpc: -2,
+      lrpc: 0,
+      production: 100,
+      ad: 0,
+      sras: 2,
+      lras: 0,
+    },
+    {
+      description: "The next scenario assumes that there is a recession",
+      effect: "",
       md: 0,
       ms: 0,
       srpc: 0,
       lrpc: 0,
-      production: -5,
-      ad: 0,
+      production: 100,
+      ad: -2,
       sras: 0,
+      lras: 0,
+    },
+    {
+      description:
+        "In a recession, what would an expansionary fiscal policy include?",
+      effect:
+        "It would include decreasing taxes and increasing government spending to increase aggregate demand.",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: 2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description: "The next scenario assumes that there is inflation",
+      effect: "",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: 2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description:
+        "During inflation, what would an contractionary fiscal policy include?",
+      effect:
+        "It would include increasing taxes and decreasing government spending to decrease aggregate demand.",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: -2,
+      sras: 0,
+      lras: 0,
     },
   ],
   monetary: [
     {
-      description: "lost",
-      effect: "a",
+      description: "All scenarios have been shown. Press next to play again.",
+      effect: "",
       md: 0,
       ms: 0,
       srpc: 0,
       lrpc: 0,
-      production: -5,
+      production: 100,
       ad: 0,
       sras: 0,
+      lras: 0,
+    },
+    {
+      description: "The next scenario assumes that there is inflation",
+      effect: "",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: 2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description:
+        "During inflation, what would a contractionary monetary policy do to the discount rate?",
+      effect:
+        "It would include raising the discount rate to discourage loans, which decreases aggregate demand and decreases the money supply.",
+      md: 0,
+      ms: -2,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: -2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description: "The next scenario assumes that there is inflation",
+      effect: "",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: 2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description:
+        "During inflation, what would a contractionary monetary policy do to the reserve requirement?",
+      effect:
+        "It would include raising the discount rate to discourage loans, which decreases aggregate demand and decreases the money supply.",
+      md: 0,
+      ms: -2,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: -2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description: "The next scenario assumes that there is inflation",
+      effect: "",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: 2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description:
+        "During inflation, what would a contractionary monetary policy do to bonds?",
+      effect: "It would include selling bonds to decrease the money supply.",
+      md: 0,
+      ms: -2,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: -2,
+      sras: 0,
+      lras: 0,
+    },
+    //
+    {
+      description: "The next scenario assumes that there is a recession",
+      effect: "",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: -2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description:
+        "During a recession, what would a expansionary monetary policy do to the discount rate?",
+      effect:
+        "It would include decreasing the discount rate to encourage loans, which increases aggregate demand and increases the money supply.",
+      md: 0,
+      ms: 2,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: 2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description: "The next scenario assumes that there is a recession",
+      effect: "",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: -2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description:
+        "During a recession, what would a expansionary monetary policy do to the reserve requirement?",
+      effect:
+        "It would include decreasing the reserve requirement to encourage loans, which increases aggregate demand and increases the money supply.",
+      md: 0,
+      ms: 2,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: 2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description: "The next scenario assumes that there is a recession",
+      effect: "",
+      md: 0,
+      ms: 0,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: -2,
+      sras: 0,
+      lras: 0,
+    },
+    {
+      description:
+        "During a recession, what would a expansionary monetary policy do to bonds?",
+      effect:
+        "It would include buying bonds, which increases aggregate demand and increases the money supply.",
+      md: 0,
+      ms: 2,
+      srpc: 0,
+      lrpc: 0,
+      production: 100,
+      ad: 2,
+      sras: 0,
+      lras: 0,
     },
   ],
 };
@@ -76,6 +344,9 @@ const Cards = ({ policy }) => {
   }, []);
 
   const showNextCard = () => {
+    if (!effected) {
+      showEffect();
+    }
     if (
       policy &&
       scenarios[policy] !== undefined &&
@@ -88,6 +359,10 @@ const Cards = ({ policy }) => {
       setScenario({ ...scene });
       setCurrentIndex(index);
       setEffected(false);
+      // resetToEquilibrium();
+      if (index == 0) {
+        resetToEquilibrium();
+      }
     }
   };
 
@@ -113,11 +388,23 @@ const Cards = ({ policy }) => {
           ms: chartsData["ms"] + scenario["ms"],
           srpc: chartsData["srpc"] + scenario["srpc"],
           lrpc: chartsData["lrpc"] + scenario["lrpc"],
-          production: chartsData["production"] + scenario["production"],
+          production: chartsData["production"],
           ad: chartsData["ad"] + scenario["ad"],
           sras: chartsData["sras"] + scenario["sras"],
         });
         setEffected(true);
+      } else {
+        setChartsData({
+          ...setChartsData,
+          md: chartsData["md"] - scenario["md"],
+          ms: chartsData["ms"] - scenario["ms"],
+          srpc: chartsData["srpc"] - scenario["srpc"],
+          lrpc: chartsData["lrpc"] - scenario["lrpc"],
+          production: chartsData["production"],
+          ad: chartsData["ad"] - scenario["ad"],
+          sras: chartsData["sras"] - scenario["sras"],
+        });
+        setEffected(false);
       }
     }
   };

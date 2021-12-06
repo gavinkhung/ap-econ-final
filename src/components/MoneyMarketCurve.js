@@ -27,7 +27,7 @@ export const MoneyMarketCurve = React.memo(
             },
             data: [
               {
-                fn: `-x+${6 + chartsData["md"]}`,
+                fn: `-0.5x+${5 + chartsData["md"]}`,
               },
               {
                 points: [
@@ -38,6 +38,10 @@ export const MoneyMarketCurve = React.memo(
                   [5 + chartsData["ms"], 4],
                   [5 + chartsData["ms"], 5],
                   [5 + chartsData["ms"], 6],
+                  [5 + chartsData["ms"], 7],
+                  [5 + chartsData["ms"], 8],
+                  [5 + chartsData["ms"], 9],
+                  [5 + chartsData["ms"], 10],
                 ],
                 fnType: "points",
                 graphType: "polyline",

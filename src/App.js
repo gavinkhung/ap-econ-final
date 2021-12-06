@@ -71,11 +71,15 @@ const App = () => {
           <h2 className="text-gray-200 text-2xl pb-2">General Concepts</h2>
           <ol className="text-gray-300 list-decimal">
             <li>Aggregate Supply</li>
+            <li>Long Run Aggregate Supply</li>
             <li>Aggregate Demand</li>
+            <li>Say's Law</li>
             <li>Production Possibility Curve</li>
+            <li>Classical Theory</li>
             <li>Keynesian Economic Theory</li>
             <li>Monetary Policy</li>
             <li>Inflation</li>
+            <li>Recession</li>
             <li>Phillips Curve</li>
             <li>Money Market Curve</li>
           </ol>

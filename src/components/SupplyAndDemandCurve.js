@@ -27,10 +27,10 @@ export const SupplyAndDemandCurve = React.memo(
             },
             data: [
               {
-                fn: `-x+${6 + chartsData["ad"]}`,
+                fn: `x+${chartsData["sras"]}`,
               },
               {
-                fn: `x+${chartsData["sras"]}`,
+                fn: `-x+${10 + chartsData["ad"]}`,
               },
               {
                 points: [
@@ -41,6 +41,10 @@ export const SupplyAndDemandCurve = React.memo(
                   [5 + chartsData["lras"], 4],
                   [5 + chartsData["lras"], 5],
                   [5 + chartsData["lras"], 6],
+                  [5 + chartsData["lras"], 7],
+                  [5 + chartsData["lras"], 8],
+                  [5 + chartsData["lras"], 9],
+                  [5 + chartsData["lras"], 10],
                 ],
                 fnType: "points",
                 graphType: "polyline",
