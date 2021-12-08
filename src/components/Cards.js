@@ -47,12 +47,12 @@ const scenarios = {
       description:
         "A new machine comes out that can pack Pepsi at twice the rate of current machines.",
       effect:
-        "Aggregate supply shifts to the right and the Phillips Curve shifts to the left. This is economic growth.",
+        "Aggregate supply shifts to the right and the Phillips Curve shifts to the left. The Production Possibility Curve grows. This is economic growth.",
       md: 0,
       ms: 0,
       srpc: -2,
       lrpc: 0,
-      production: 100,
+      production: 110,
       ad: 0,
       sras: -2,
       lras: 0,
@@ -61,12 +61,12 @@ const scenarios = {
       description:
         "A report comes out that says excess sugar leads to diabetes.",
       effect:
-        "Aggregate demand shifts to the left and there is a shift along the Phillips Curve. This is a recession.",
+        "Aggregate demand shifts to the left and there is a shift along the Phillips Curve. The Production Possibility Curve shrinks. This is a recession.",
       md: 0,
       ms: 0,
       srpc: 0,
       lrpc: 0,
-      production: 100,
+      production: 90,
       ad: -2,
       sras: 0,
       lras: 0,
@@ -74,7 +74,7 @@ const scenarios = {
     {
       description: "What happens to aggregate supply in the long run?",
       effect:
-        "After some time (18-24 months), the market should adjust itself back to equilibrium.",
+        "After some time (18-24 months), the market should adjust itself back to equilibrium. This is because of Say's Law, which states that supply creates its own demand.",
       md: 0,
       ms: 0,
       srpc: 0,
@@ -87,15 +87,15 @@ const scenarios = {
   ],
   keynesian: [
     {
-      description: "",
+      description: "All scenarios have been shown. Press next to play again.",
       effect: "",
       md: 0,
       ms: 0,
-      srpc: -2,
+      srpc: 0,
       lrpc: 0,
       production: 100,
       ad: 0,
-      sras: 2,
+      sras: 0,
       lras: 0,
     },
     {
