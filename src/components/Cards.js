@@ -388,7 +388,7 @@ const Cards = ({ policy }) => {
           ms: chartsData["ms"] + scenario["ms"],
           srpc: chartsData["srpc"] + scenario["srpc"],
           lrpc: chartsData["lrpc"] + scenario["lrpc"],
-          production: chartsData["production"],
+          production: scenario["production"],
           ad: chartsData["ad"] + scenario["ad"],
           sras: chartsData["sras"] + scenario["sras"],
         });
