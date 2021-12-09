@@ -438,14 +438,14 @@ const Cards = ({ policy }) => {
           >
             Next Card
           </button>
-          <button
+          {/* <button
             className="hidden focus:outline-none text-black text-xl py-2 px-3 rounded-md bg-white hover:bg-gray-200 hover:shadow-lg font-medium md:block"
             onClick={() => {
               resetToEquilibrium();
             }}
           >
             Reset to Equilibrium
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
